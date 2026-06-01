@@ -17,6 +17,12 @@ def add_expenses(expenses):
     expense = {"amount": amount, "category": category, "description": description}
     expenses.append(expense)
     print("Expense added succesfully...")
+def view_expenses(expenses):
+    if not expenses:
+        print("No expenses found.")
+    else:
+        for index, expense in enumerate(expenses,start=1):
+            print(f"{index}. {expense['category']} | Rs.{expense['amount']:.2f} | {expense['description']}")
 while True:
     try:
         display_menu()
