@@ -13,16 +13,20 @@ def add_expenses(expenses):
             print("Invalid input. Please enter a number.")
             continue
     category = input("Enter category: ")
-    description = input("Enter Description: ")
+    description = input("Enter Description: ").strip()
     expense = {"amount": amount, "category": category, "description": description}
     expenses.append(expense)
-    print("Expense added succesfully...")
+    print("Expense added successfully...")
 def view_expenses(expenses):
     if not expenses:
         print("No expenses found.")
     else:
-        for index, expense in enumerate(expenses,start=1):
-            print(f"{index}. {expense['category']} | Rs.{expense['amount']:.2f} | {expense['description']}")
+        for index, expense in enumerate(expenses, start=1):
+            if not expense['description']: 
+                display_text = "No description provided"
+            else:
+                display_text=expense['description']
+            print(f"{index}. {expense['category']:<12} | Rs.{expense['amount']:<10.2f} | {display_text}")
 while True:
     try:
         display_menu()
@@ -35,7 +39,7 @@ while True:
         add_expenses(expenses)
     elif choice == 2:
         print("View expenses selected")
-        print(expenses)
+        view_expenses(expenses)
     elif choice == 3:
         print("Exiting...")
         break
