@@ -23,4 +23,27 @@ def add_expenses(expenses):
     description = input("Enter Description: ").strip()
     expense = {"amount": amount, "category": category, "description": description}
     expenses.append(expense)
-    
+def delete_expense(expenses):
+    if not expenses:
+        print("No expenses to delete.")
+        return
+
+    for i, exp in enumerate(expenses, start=1):
+        print(f"{i}. {exp['category']} | Rs.{exp['amount']:.2f} | {exp['description']}")
+
+    while True:
+        try:
+            choice = int(input("Enter number to delete: "))
+
+            if choice <= 0 or choice > len(expenses):
+                print("Invalid number. Try again.")
+                continue
+
+            index = choice - 1
+            removed = expenses.pop(index)
+            print(f"Deleted: {removed['category']} | Rs.{removed['amount']:.2f}")
+            break
+
+        except ValueError:
+            print("Enter a valid number.")
+       
