@@ -46,4 +46,11 @@ def delete_expense(expenses):
 
         except ValueError:
             print("Enter a valid number.")
-       
+
+def total_expenses(expenses):
+    total = 0
+
+    for expense in expenses:
+        total += expense['amount']
+
+    print(f"Total spending: Rs.{total:.2f}")   
