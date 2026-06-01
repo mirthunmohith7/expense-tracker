@@ -1,17 +1,16 @@
 # CLI Expense Tracker (Python)
 
-A simple command-line expense tracking application built using Python.  
-It demonstrates core programming concepts, file handling, and basic software design principles.
+A command-line expense tracking application built with Python. This project focuses on building real-world software engineering fundamentals such as modular design, file handling, JSON persistence, input validation, and basic data analysis.
 
 ---
 
 ## 🚀 Features
 
 - Add expenses with amount, category, and optional description
-- View all stored expenses in a formatted table
-- Delete expenses by selecting index
-- View total spending
-- Persistent storage using JSON (data is saved even after program exit)
+- View all expenses in a clean formatted table
+- Delete expenses using index-based selection
+- Calculate total spending
+- Persistent storage using JSON (data survives restarts)
 - Input validation and error handling for safe usage
 
 ---
@@ -31,41 +30,57 @@ expense-tracker/
 
 ## ⚙️ How to Run
 
-Make sure you have Python installed.
+Make sure Python 3 is installed on your system.
 
-Run the program:
+Run the application: 
 
 ```bash
 python main.py
+```
+---
 
 💾 Data Storage
 
-All expenses are stored in a local JSON file:
+All expense data is stored locally in a JSON file:
 
 data/expenses.json
 
-This allows data to persist between sessions.
+The application automatically loads data on startup and saves updates after changes like adding or deleting expenses.
+
+📊 Example Output
+1. Food        | Rs.250.00 | Lunch
+2. Travel      | Rs.100.00 | Metro
+3. Shopping    | Rs.999.00 | Shoes
 
 📚 Concepts Used
-Python functions
-Loops and conditionals
-Dictionaries and lists
-Input validation
-File handling
-JSON serialization/deserialization
-Modular programming
-Basic CLI design
+- Python functions and modular programming
+- Loops and conditionals
+- Lists and dictionaries
+- Input validation using try/except
+- File handling (open/read/write)
+- JSON serialization and deserialization
+- Basic CLI (Command Line Interface) design
+- Data persistence
+- Simple analytics (total spending)
 
-🧠 What I Learned
-How to structure a small Python project into modules
-How to separate logic (helpers) and storage (file handling)
-How to handle invalid user input safely
-How persistence works using JSON files
-How to design a simple command-line interface
+🧠 What This Project Demonstrates
+
+This project is not just a beginner script. It demonstrates:
+
+- Ability to structure a multi-file Python project
+- Understanding of separation of concerns (main, logic, storage)
+- Handling real-world edge cases like invalid input and missing files
+- Working with persistent data storage
+- Building maintainable and extensible CLI applications
+
 🚧 Future Improvements
+- Category-wise spending breakdown
+- Monthly expense tracking
+- Sorting expenses by amount and category
+- Export data to CSV
+- Improved CLI UI formatting
+- Search and filter functionality
 
-Category-wise spending breakdown
-Monthly expense tracking
-Sorting expenses by amount/date
-Export to CSV
-Better CLI UI formatting
+📌 Status
+
+Actively developed as part of learning software engineering fundamentals and building production-style Python CLI applications.
