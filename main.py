@@ -1,32 +1,8 @@
+from utils.storage import load_expense, save_expense
+from utils.helpers import view_expenses, add_expenses
+expenses=load_expense()
 def display_menu():
     print("1.Add expense\n2.View expenses\n3.Exit")
-expenses=[]
-def add_expenses(expenses):
-    while True:
-        try:
-            amount = float(input("Enter amount: "))
-            if amount<=0:
-                print("Amount must be greater than 0...")
-            else:
-                break
-        except ValueError:
-            print("Invalid input. Please enter a number.")
-            continue
-    category = input("Enter category: ")
-    description = input("Enter Description: ").strip()
-    expense = {"amount": amount, "category": category, "description": description}
-    expenses.append(expense)
-    print("Expense added successfully...")
-def view_expenses(expenses):
-    if not expenses:
-        print("No expenses found.")
-    else:
-        for index, expense in enumerate(expenses, start=1):
-            if not expense['description']: 
-                display_text = "No description provided"
-            else:
-                display_text=expense['description']
-            print(f"{index}. {expense['category']:<12} | Rs.{expense['amount']:<10.2f} | {display_text}")
 while True:
     try:
         display_menu()
@@ -37,6 +13,7 @@ while True:
     if choice == 1:
         print("Add expense selected")
         add_expenses(expenses)
+        save_expense(expenses)
     elif choice == 2:
         print("View expenses selected")
         view_expenses(expenses)
@@ -45,3 +22,4 @@ while True:
         break
     else:
         print("Invalid choice. Please try again.")
+    
