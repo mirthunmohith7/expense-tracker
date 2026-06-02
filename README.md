@@ -191,3 +191,17 @@ It demonstrates:
 Version: `v1.0`
 
 Completed as a foundational software engineering project while learning Python, Git, GitHub, and backend development concepts.
+
+## Screenshots
+
+### Main Menu
+![Main Menu](assets/menu.png)
+
+### Expense View
+![Expenses](assets/expenses.png)
+
+### Category Wise Summary
+![CategoryWiseSummary](assets/category-summary.png)
+
+### Monthly Summary
+![MonthlySummary](assets/monthly-summary.png)
