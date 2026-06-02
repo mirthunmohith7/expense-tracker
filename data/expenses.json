@@ -1,1 +1,1 @@
-[{"amount": 1000.0, "category": "Food", "description": "Lunch"}, {"amount": 2000.0, "category": "Gift", "description": "Watch"}, {"amount": 2500.0, "category": "Food", "description": "Dinner"}, {"amount": 2500.0, "category": "Food", "description": "Dinner"}]
+[{"date": "2026-06-02", "amount": 2000.0, "category": "Food", "description": "Lunch"}, {"date": "2026-06-02", "amount": 3500.0, "category": "Gift", "description": "Watch"}]

@@ -1,3 +1,4 @@
+from datetime import datetime
 def view_expenses(expenses):
     if not expenses:
         print("No expenses found.")
@@ -7,7 +8,7 @@ def view_expenses(expenses):
                 display_text = "No description provided"
             else:
                 display_text=expense['description']
-            print(f"{index}. {expense['category']:<12} | Rs.{expense['amount']:<10.2f} | {display_text}")
+            print(f"{index}. {expense['date']:<12} | {expense['category']:<12} | Rs.{expense['amount']:<10.2f} | {display_text}")
 def add_expenses(expenses):
     while True:
         try:
@@ -26,7 +27,8 @@ def add_expenses(expenses):
         else:
             break
     description = input("Enter Description: ").strip()
-    expense = {"amount": amount, "category": category, "description": description}
+    date=datetime.now().strftime("%Y-%m-%d")
+    expense = {"date": date,"amount": amount, "category": category, "description": description}
     expenses.append(expense)
 def delete_expense(expenses):
     if not expenses:
