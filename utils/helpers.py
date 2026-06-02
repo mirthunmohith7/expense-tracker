@@ -53,4 +53,16 @@ def total_expenses(expenses):
     for expense in expenses:
         total += expense['amount']
 
-    print(f"Total spending: Rs.{total:.2f}")   
+    print(f"Total spending: Rs.{total:.2f}")  
+
+def category_summary(expenses):
+    category_totals = {}
+    for expense in expenses:
+        category = expense['category']
+        amount = expense['amount']
+        if category in category_totals:
+            category_totals[category] +=  amount
+        else:
+            category_totals[category] =  amount
+    for category, total in category_totals.items():
+        print(f"{category:<12} | Rs.{total:.2f}")
