@@ -48,9 +48,11 @@ data/expenses.json
 The application automatically loads data on startup and saves updates after changes like adding or deleting expenses.
 
 📊 Example Output
+```bash
 1. Food        | Rs.250.00 | Lunch
 2. Travel      | Rs.100.00 | Metro
 3. Shopping    | Rs.999.00 | Shoes
+```
 
 📚 Concepts Used
 - Python functions and modular programming
