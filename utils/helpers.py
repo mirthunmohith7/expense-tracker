@@ -19,7 +19,12 @@ def add_expenses(expenses):
         except ValueError:
             print("Invalid input. Please enter a number.")
             continue
-    category = input("Enter category: ")
+    while True:
+        category = input("Enter category: ").strip().title()
+        if not category:
+            print("Category cannot be empty")
+        else:
+            break
     description = input("Enter Description: ").strip()
     expense = {"amount": amount, "category": category, "description": description}
     expenses.append(expense)
