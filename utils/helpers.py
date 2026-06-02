@@ -71,3 +71,13 @@ def category_summary(expenses):
             category_totals[category] =  amount
     for category, total in category_totals.items():
         print(f"{category:<12} | Rs.{total:.2f}")
+
+def filter_by_category(expenses):
+    category=input("Enter category name: ").strip().title()
+    found=False
+    for expense in expenses:
+        if expense['category'] == category:
+            print(f"{expense['category']:<10} | {expense['amount']:>12.2f} | {expense['description']}")
+            found=True
+    if not found:
+        print("No expenses found for this category")    
