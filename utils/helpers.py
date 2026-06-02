@@ -83,3 +83,16 @@ def filter_by_category(expenses):
             found=True
     if not found:
         print("No expenses found for this category")    
+
+def monthly_summary(expenses):
+    monthly_totals = {}
+    for expense in expenses:
+        month = expense['date'][:7]
+        amount = expense['amount']
+        if month in monthly_totals:
+            monthly_totals[month]+= amount
+        else:
+            monthly_totals[month]= amount
+    for month,total in monthly_totals.items():
+        print(f"{month:<12} | Rs.{total:.2f}")
+
